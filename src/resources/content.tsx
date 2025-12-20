@@ -174,60 +174,121 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Full Stack Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Building modern web applications with the MERN stack, Next.js, and TypeScript for scalable, performant solutions.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-02.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-          // {
-          //   src: "/images/projects/project-01/cover-03.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "React",
+            icon: "react",
           },
           {
             name: "Next.js",
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "TypeScript",
+            icon: "typescript",
+          },
+          {
+            name: "Node.js",
+            icon: "nodejs",
+          },
+          {
+            name: "MongoDB",
+            icon: "mongodb",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-04.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
+        images: [],
+      },
+      {
+        title: "Frontend & UI Development",
+        description: (
+          <>Crafting responsive, accessible interfaces with React 19, Tailwind CSS, and design systems for exceptional user experiences.</>
+        ),
+        tags: [
+          {
+            name: "React",
+            icon: "react",
+          },
+          {
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "tailwindcss",
+          },
+          {
+            name: "Figma",
+            icon: "figma",
+          },
         ],
+        images: [],
+      },
+      {
+        title: "Backend & Database",
+        description: (
+          <>Developing robust APIs and data layers with Node.js, Express, MongoDB, and PostgreSQL for enterprise-grade applications.</>
+        ),
+        tags: [
+          {
+            name: "Node.js",
+            icon: "nodejs",
+          },
+          {
+            name: "Express",
+            icon: "express",
+          },
+          {
+            name: "MongoDB",
+            icon: "mongodb",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Machine Learning & Data Science",
+        description: (
+          <>Building ML models for predictive analytics and explainable AI using Python, scikit-learn, and data visualization libraries.</>
+        ),
+        tags: [
+          {
+            name: "Python",
+            icon: "python",
+          },
+          {
+            name: "Jupyter",
+            icon: "jupyter",
+          },
+          {
+            name: "Pandas",
+            icon: "pandas",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Cloud & DevOps",
+        description: (
+          <>Implementing containerization and cloud infrastructure with Docker and AWS for scalable, production-ready deployments.</>
+        ),
+        tags: [
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+          {
+            name: "AWS",
+            icon: "aws",
+          },
+        ],
+        images: [],
       },
     ],
   },

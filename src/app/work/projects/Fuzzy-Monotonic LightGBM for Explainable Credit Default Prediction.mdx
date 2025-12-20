@@ -1,0 +1,174 @@
+---
+title: "Fuzzy-Monotonic LightGBM for Explainable Credit Default Prediction"
+publishedAt: "2024-11-30"
+summary: "A hybrid explainable AI framework combining fuzzy linguistic reasoning with monotonic gradient boosting for regulatory-compliant credit default prediction."
+images:
+
+team:
+  - name: "Utkarsh Dubey"
+    role: "Lead Researcher"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/dubey9990/"
+  - name: "Kanav Singla"
+    role: "Co-Researcher"
+    linkedIn: "https://www.linkedin.com/in/kanav-singla-sde/"
+  - name: "Dushyant Bhardwaj"
+    role: "Co-Researcher"
+    linkedIn: "https://www.linkedin.com/in/dushyant-bhardwaj-3003a9219/"
+  - name: "Anshuman Raj"
+    role: "Co-Researcher"
+    linkedIn: "https://www.linkedin.com/in/anshuman-raj-6835b5290/"
+link: "https://github.com/UtkarshDubeyGIT/Credit-Risk-Analysis-and-Prediction-Framework"
+---
+
+## Overview
+
+This research project addresses the critical trade-off between **predictive accuracy** and **regulatory interpretability** in financial credit risk modeling. We propose a novel **Fuzzy-Monotonic LightGBM** framework that achieves competitive performance (ROC-AUC ~0.77, PR-AUC 0.55) while maintaining structural transparency through:
+
+- 🧩 **Fuzzy Membership Functions**: Human-interpretable linguistic variables (Low/Medium/High)
+- 📊 **Monotonic Constraints**: Economic priors enforced in gradient boosting
+- 🔧 **Behavioral Feature Engineering**: Domain-driven credit indicators
+- 🔍 **Multi-Layer Explainability**: Structural (fuzzy + monotonic) + attributional (SHAP)
+
+## Key Results
+
+| Metric           | Baseline Raw | Baseline + Engineered | Fuzzy  | **Fuzzy-Monotonic** |
+| ---------------- | ------------ | --------------------- | ------ | ------------------- |
+| **ROC-AUC**      | 0.7744       | 0.7733                | 0.7701 | **0.7700**          |
+| **PR-AUC**       | 0.5477       | 0.5496                | 0.5485 | **0.5498** ↑        |
+| **Brier Score**  | 0.1725       | 0.1730                | 0.1687 | **0.1696** ↓        |
+| **KS Statistic** | 0.4235       | 0.4231                | 0.4208 | **0.4144**          |
+
+✅ **Best PR-AUC** for minority class detection  
+✅ **Improved calibration** for probability estimates  
+✅ **Economic consistency** via monotonic constraints  
+✅ **Regulatory alignment** (Basel II/III, IFRS-9, ECB TRIM)
+
+## Architecture
+
+The framework consists of multiple interconnected layers:
+
+1. **Data Preprocessing Layer**: Feature alignment, normalization (RobustScaler), and categorical encoding
+2. **Behavioral Feature Engineering**: Domain-driven credit indicators including utilization rates, delinquency intensity, and payment trends
+3. **Fuzzy Membership Layer**: Linguistic variables (Low/Medium/High) with percentile-based cut-points
+4. **Monotonic LightGBM Ensemble**: Gradient boosted decision trees with economic constraint enforcement
+5. **Explainability Layer**: SHAP feature attribution combined with fuzzy rule activations
+
+## Methodology
+
+### Behavioral Feature Engineering
+
+```python
+# Aggregated spending behavior
+BILL_AMT_AVG = mean(BILL_AMT1, ..., BILL_AMT6)
+
+# Credit utilization
+utilization = BILL_AMT_AVG / LIMIT_BAL  # clipped [0, 1]
+
+# Repayment discipline
+repay_ratio1 = PAY_AMT1 / BILL_AMT1  # clipped [0, 1]
+
+# Delinquency severity
+delinquency_intensity = sum(PAY_0, ..., PAY_6)
+
+# Payment trend (behavioral drift)
+paytrend = PAY_6 - PAY_0  # improving → negative
+```
+
+### Fuzzy Membership Functions
+
+Linguistic variables defined using percentile-based cutpoints:
+
+- **Low**: [min, 33rd percentile]
+- **Medium**: [25th, 75th percentile] (overlapping transitions)
+- **High**: [67th percentile, max]
+
+### Monotonic Constraints
+
+| Feature                 | Constraint | Economic Rationale                             |
+| ----------------------- | ---------- | ---------------------------------------------- |
+| `LIMIT_BAL`             | ↑ → risk ↓ | Higher credit limit implies stronger borrowers |
+| `AGE`                   | ↑ → risk ↓ | Older applicants typically more stable         |
+| `PAY_0`                 | ↑ → risk ↑ | Recent delinquency signals distress            |
+| `utilization`           | ↑ → risk ↑ | High utilization indicates stress              |
+| `repay_ratio1`          | ↑ → risk ↓ | Higher repayment reduces risk                  |
+| `delinquency_intensity` | ↑ → risk ↑ | Historical delinquency compounds risk          |
+| `paytrend`              | ↑ → risk ↓ | Improving trend lowers risk                    |
+
+## Datasets
+
+### Taiwan Credit Card Default Dataset
+
+- **Source**: UCI Machine Learning Repository
+- **Size**: 30,000 samples
+- **Role**: Primary modeling and ablation studies
+- **Features**: Temporal repayment behavior (6 months), demographic attributes, billing/payment amounts
+
+### German Credit Dataset
+
+- **Source**: UCI Statlog
+- **Size**: 1,000 samples
+- **Role**: Interpretability demonstration
+- **Features**: Categorical financial stability indicators, loan characteristics
+
+## Technologies Used
+
+- **Python 3.8+**: Core programming language
+- **LightGBM**: Gradient boosting framework with monotonic constraints
+- **scikit-learn**: Data preprocessing, model evaluation, and baseline implementations
+- **SHAP**: TreeExplainer for feature attribution and explainability
+- **pandas & numpy**: Data manipulation and numerical computing
+- **matplotlib & seaborn**: Visualization of results and calibration curves
+
+## Evaluation Metrics
+
+| Metric           | Purpose                    | Why It Matters                                   |
+| ---------------- | -------------------------- | ------------------------------------------------ |
+| **PR-AUC**       | Precision-recall trade-off | Highlights minority class performance (defaults) |
+| **ROC-AUC**      | Discrimination power       | Measures ranking ability across thresholds       |
+| **Brier Score**  | Probability calibration    | Evaluates quality of probability estimates       |
+| **KS Statistic** | Score separation           | Industry-standard for credit scoring validation  |
+
+## Research Impact
+
+This framework demonstrates that regulatory compliance and model performance are not mutually exclusive. By combining fuzzy reasoning with monotonic gradient boosting, we achieve:
+
+- **Structural Transparency**: Fuzzy rules provide human-readable explanations
+- **Economic Consistency**: Monotonic constraints enforce domain knowledge
+- **Competitive Performance**: Maintains accuracy comparable to black-box models
+- **Regulatory Alignment**: Meets Basel II/III and IFRS-9 requirements
+
+## Documentation & Papers
+
+All research manuscripts and technical documentation are available in the repository:
+
+- **Extended IEEE Paper**: Full methodology with integrated exploratory data analysis
+- **Conference Submission**: Condensed format for academic presentation
+- **Journal Template**: Elsevier-ready manuscript
+- **Technical Docs**: Architecture, data, models, and API documentation
+
+## Citation
+
+```bibtex
+@inproceedings{dubey2024fuzzy,
+  title={Fuzzy-Monotonic LightGBM for Explainable Credit Default Prediction},
+  author={Dubey, Utkarsh and Singla, Kanav and Bhardwaj, Dushyant},
+  booktitle={Proceedings of IEEE Conference},
+  year={2024},
+  organization={Netaji Subhas University of Technology}
+}
+```
+
+## Future Work
+
+- Automated monotonic prior discovery
+- Uncertainty quantification for probability estimates
+- Macroeconomic stress testing and drift analysis
+- Conversion to compact scorecards for production
+- Multi-dataset cross-portfolio validation
+- Causal structure constraints
+- Real-time streaming model updates
+
+---
+
+**Built with ❤️ for transparent and responsible credit risk assessment**
