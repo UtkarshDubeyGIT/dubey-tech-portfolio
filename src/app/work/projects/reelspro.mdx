@@ -1,0 +1,49 @@
+---
+title: "ReelsPro - Short-Form Video Platform"
+publishedAt: "2025-04-15"
+summary: "A TikTok-inspired short-form video platform with vertical scrolling feed, built using Next.js 15, MongoDB, and ImageKit."
+images:
+  - "/images/projects/reelspro/reelspro-login.png"
+  - "/images/projects/reelspro/reelspro-home.png"
+team:
+  - name: "Utkarsh Dubey"
+    role: "Full Stack Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/dubey9990"
+link: "https://reelspro-wheat.vercel.app"
+---
+
+## Overview
+
+A short-form video platform where users can upload and watch vertical videos in a scrolling feed, similar to TikTok or Instagram Reels. Built with Next.js 15 and ImageKit for video storage and delivery.
+
+## Key Features
+
+- **User Authentication**: Account creation and login using NextAuth for secure user management.
+- **Video Upload**: Users can upload vertical videos (9:16 aspect ratio) up to 60 seconds. Videos are stored and delivered through ImageKit CDN.
+- **Vertical Scrolling Feed**: Infinite scroll feed where users can browse videos with automatic playback.
+- **Social Features**: Users can like videos and add comments to interact with content.
+- **User Profiles**: Profile pages displaying user information and their uploaded videos.
+- **Responsive Design**: Clean interface built with Tailwind CSS and shadcn/ui components.
+
+## Technologies Used
+
+- **Next.js 15**: React framework for building the application.
+- **TypeScript**: For type safety throughout the codebase.
+- **MongoDB**: Database for storing user data, videos, and interactions.
+- **NextAuth**: Authentication system for user login and registration.
+- **ImageKit**: Video storage and CDN for video delivery.
+- **Tailwind CSS**: For styling the user interface.
+- **shadcn/ui**: Pre-built UI components.
+
+## Challenges and Learnings
+
+The main challenge was implementing smooth video scrolling with autoplay. Videos need to play only when visible on screen, which required using intersection observers and lazy loading.
+
+Handling video uploads and ensuring fast streaming was another challenge. This was solved by using ImageKit's CDN for video optimization and delivery.
+
+Managing likes and comments required careful state management to keep the UI responsive and data consistent. Designing an efficient MongoDB schema for querying video feeds was also an important learning experience.
+
+## Outcome
+
+The platform is fully functional and deployed on Vercel. It includes core features like video upload, feed browsing, likes, and comments. The project demonstrates full-stack development skills including authentication, video streaming, database design, and building responsive user interfaces with modern web technologies.
