@@ -27,7 +27,7 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
-  const resumeLink = social.find((item) => item.name === "resume")?.link;
+  const resumeLink = social.find((item) => item.name === "Resume")?.link;
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
