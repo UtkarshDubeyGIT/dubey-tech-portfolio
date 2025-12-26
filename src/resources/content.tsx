@@ -109,9 +109,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I’m a computer science student at NSUT, New Delhi, focused on building
+        clear and reliable software systems. My work spans full-stack web
+        development and applied machine learning, with an emphasis on simple
+        architecture, good performance, and thoughtful user experience.
       </>
     ),
   },
@@ -125,12 +126,12 @@ const about: About = {
         role: "Senior Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Redesigned the UI/UX for the FLY platform, resulting in a 20%
+            increase in user engagement and 30% faster load times.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Spearheaded the integration of AI tools into design workflows,
+            enabling designers to iterate 50% faster.
           </>,
         ],
         images: [
@@ -149,12 +150,12 @@ const about: About = {
         role: "Lead Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a design system that unified the brand across multiple
+            platforms, improving design consistency by 40%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led a cross-functional team to launch a new product line,
+            contributing to a 15% increase in overall company revenue.
           </>,
         ],
         images: [],
@@ -171,7 +172,9 @@ const about: About = {
       },
       {
         name: "CBSE (Class XII) U.S.M Public School, Nangloi, 2023",
-        description: <>Completed higher secondary education with a score of 89%.</>,
+        description: (
+          <>Completed higher secondary education with a score of 89%.</>
+        ),
       },
       {
         name: "CBSE (Class X) 2021 ST. Mary’s School, Hisar 93%",
@@ -186,7 +189,10 @@ const about: About = {
       {
         title: "Full Stack Development",
         description: (
-          <>Building modern web applications with the MERN stack, Next.js, and TypeScript for scalable, performant solutions.</>
+          <>
+            Building modern web applications with the MERN stack, Next.js, and
+            TypeScript for scalable, performant solutions.
+          </>
         ),
         tags: [
           {
@@ -215,7 +221,10 @@ const about: About = {
       {
         title: "Frontend & UI Development",
         description: (
-          <>Crafting responsive, accessible interfaces with React 19, Tailwind CSS, and design systems for exceptional user experiences.</>
+          <>
+            Crafting responsive, accessible interfaces with React 19, Tailwind
+            CSS, and design systems for exceptional user experiences.
+          </>
         ),
         tags: [
           {
@@ -240,7 +249,10 @@ const about: About = {
       {
         title: "Backend & Database",
         description: (
-          <>Developing robust APIs and data layers with Node.js, Express, MongoDB, and PostgreSQL for enterprise-grade applications.</>
+          <>
+            Developing robust APIs and data layers with Node.js, Express,
+            MongoDB, and PostgreSQL for enterprise-grade applications.
+          </>
         ),
         tags: [
           {
@@ -265,7 +277,10 @@ const about: About = {
       {
         title: "Machine Learning & Data Science",
         description: (
-          <>Building ML models for predictive analytics and explainable AI using Python, scikit-learn, and data visualization libraries.</>
+          <>
+            Building ML models for predictive analytics and explainable AI using
+            Python, scikit-learn, and data visualization libraries.
+          </>
         ),
         tags: [
           {
@@ -286,7 +301,10 @@ const about: About = {
       {
         title: "Cloud & DevOps",
         description: (
-          <>Implementing containerization and cloud infrastructure with Docker and AWS for scalable, production-ready deployments.</>
+          <>
+            Implementing containerization and cloud infrastructure with Docker
+            and AWS for scalable, production-ready deployments.
+          </>
         ),
         tags: [
           {
