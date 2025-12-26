@@ -23,8 +23,8 @@ export function formatDate(date: string, includeRelative = false) {
   }
 
   const fullDate = targetDate.toLocaleString("en-us", {
-    month: "long",
     day: "numeric",
+    month: "long",
     year: "numeric",
   });
 
